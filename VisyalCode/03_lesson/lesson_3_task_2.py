@@ -8,4 +8,4 @@ catalog = [
     ]
 
 for smartphone in catalog:
-    print(f"{smartphone.name_phone}-{smartphone.model}.{smartphone.namber}")
+    print(f"{smartphone.name_phone}-{smartphone.model}.{smartphone.number}")

@@ -7,7 +7,7 @@ class User:
 
 	def sayName(self):
 		print("мое имя ", self.username)
-	def saysurname(self):
+	def saySurname(self):
 		print("моя фамилия",self.surname )
 	def sayname_surname(self):
-		print( f"мои имя и фамилия {self.surname} {self.username}")	
+		print( f"мои имя и фамилия {self.username} {self.surname}")	
