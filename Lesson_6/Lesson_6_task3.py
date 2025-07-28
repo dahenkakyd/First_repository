@@ -19,7 +19,7 @@ for i in range(4):
 img = driver.find_elements(By.TAG_NAME, 'img')
 
 if len(img) >= 3:
-    third_image_src = img[3].get_attribute('src')
+    third_image_src = img[2].get_attribute('src')
     print("Атрибут src третьего изображения:", third_image_src)
 else:
     print("На странице меньше трех изображений.")
