@@ -4,12 +4,12 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-# Фикстура для настройки WebDriver
+
 
 
 @pytest.fixture(scope="function")
 def driver():
-    # Инициализация WebDriver
+
     driver = webdriver.Chrome()
     yield driver
     driver.quit()
@@ -33,20 +33,20 @@ def test_fill_form(driver):
         "company": "SkyPro",
     }
 
-    # Заполнение формы
+
     for field_name, value in fields.items():
         field = waiter.until(
             EC.presence_of_element_located((By.NAME, field_name))
         )
         field.send_keys(value)
 
-    # Нажатие на кнопку Submit
+
     submit_button = waiter.until(
         EC.element_to_be_clickable((By.XPATH, "//button[text()='Submit']"))
     )
     submit_button.click()
 
-    # Проверка цвета фона поля "Zip code" после отправки формы
+
     zip_code_element = waiter.until(
         EC.presence_of_element_located((By.ID, "zip-code"))
     )
@@ -56,7 +56,7 @@ def test_fill_form(driver):
     "Expected Zip code background color: {expected_zip_code_color}, but got:"
     "{zip_code_color}"
 
-    # Проверка цвета остальных полей
+
     green_fields = ["first-name", "last-name", "address", "city", "e-mail",
                     "phone", "job-position", "company"]
     expected_green_color = 'rgba(209, 231, 221, 1)'
