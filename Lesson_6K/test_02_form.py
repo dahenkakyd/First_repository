@@ -35,7 +35,7 @@ def test_calculator(browser):
     browser.find_element(By.XPATH, "//span[text()='=']").click()
 
 
-    result = WebDriverWait(browser, 55).until(
+    result = WebDriverWait(browser, 45).until(
         EC.text_to_be_present_in_element((By.CLASS_NAME, "screen"), "15")
     )
 
