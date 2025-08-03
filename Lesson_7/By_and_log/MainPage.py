@@ -15,6 +15,5 @@ class MainPage:
                 )
             )
             item_element.click()
-
-        def go_to_cart(self):
-            self.driver.find_element(By.CLASS_NAME, "shopping_cart_link").click()
+            def in_cart(self):
+                self.driver.find_element(By.CSS_SELECTOR, "shopping_cart_link").click()

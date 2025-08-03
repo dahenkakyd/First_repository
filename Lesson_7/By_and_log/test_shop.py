@@ -2,10 +2,10 @@ import pytest
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service as ChromeService
 from webdriver_manager.chrome import ChromeDriverManager
-from Login_page import LoginPage
-from main_page import MainPage
-from by_page import ByPage
-from chekout_page import Checkout_page
+from LoginPage import LoginPage
+from MainPage import MainPage
+from ByPage import ByPage
+from Checkout_page import Checkout_page
 
 
 @pytest.fixture(scope="module")
@@ -39,7 +39,7 @@ def test_shop(browser):
     for item in items:
         main_page.item_to_cart(item)
 
-    main_page.go_to_cart()
+    main_page.in_cart("12")
     cart_page.Сheckout_in_cart(items)
     cart_page.click_checkout()
 
