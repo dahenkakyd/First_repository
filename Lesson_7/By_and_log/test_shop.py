@@ -39,7 +39,7 @@ def test_shop(browser):
     for item in items:
         main_page.item_to_cart(item)
 
-    main_page.in_cart("12")
+    main_page.in_cart()
     cart_page.Сheckout_in_cart(items)
     cart_page.click_checkout()
 
