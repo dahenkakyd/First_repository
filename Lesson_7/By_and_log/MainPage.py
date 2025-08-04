@@ -1,0 +1,18 @@
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+
+class MainPage:
+    def __init__(self, driver):
+        self.driver = driver
+
+    def item_to_cart(self, item_name):
+            item_element = WebDriverWait(self.driver, 10).until(
+                EC.presence_of_element_located((By.XPATH, f"//div[text()='{item_name}']"
+                                                          f"/ancestor::div[@class='inventory_item']//button")
+                )
+            )
+            item_element.click()
+    def in_cart(self): (self.driver.find_element(By.CSS_SELECTOR, ".shopping_cart_link")
+                        .click())
