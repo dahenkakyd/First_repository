@@ -26,3 +26,4 @@ class Checkout_page:
     def complete_purchase(self):
         self.waiter.until(EC.element_to_be_clickable((By.ID, "finish"))
                           ).click()
+        
