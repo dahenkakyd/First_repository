@@ -1,7 +1,7 @@
 import pytest  # noqa: F401
 from yougile import YougileAPI
 
-api_key = ("fmdv2aXsZ0Z7osmxhlOuFj9Mhn9FxQ5xBgMV6203pdeRWb8NkNyswi1xmEBNzJBJ"
+api_key = (""
            )
 base_url = "https://ru.yougile.com/api-v2"
 yougile_api = YougileAPI(base_url, api_key)
