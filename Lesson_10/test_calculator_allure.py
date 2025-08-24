@@ -3,7 +3,7 @@ import allure
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service as ChromeService
 from webdriver_manager.chrome import ChromeDriverManager
-from calculator_page import CalculatorPage
+from CalculatorPageAllure import CalculatorPage
 # Импортируем класс
 
 
@@ -28,14 +28,14 @@ def test_calculator(driver):
     calculator.set_delay(46)
 
     # Выполнение сложения 7 + 8
-    calculator.click_button('1')
+    calculator.click_button('7')
     calculator.click_button('+')
-    calculator.click_button('2')
+    calculator.click_button('8')
     calculator.click_button('=')
 
     # Ожидание, пока результат не будет отображен
-    calculator.wait_for_result(3)
+    calculator.wait_for_result(15)
 
     # Получение результата и проверка
     result = calculator.get_result()
-    assert result == '3', "Ожидалось, что результат будет '3', но получено '{result}'"
+    assert result == '15', "Ожидалось, что результат будет '15', но получено '{result}'"
